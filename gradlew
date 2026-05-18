@@ -50,9 +50,9 @@ warn() {
 }
 
 die() {
-    echo
+    echo >&2
     echo "$*" >&2
-    echo
+    echo >&2
     exit 1
 }
 
@@ -115,6 +115,6 @@ if ! command -v xargs >/dev/null 2>&1 ; then
 fi
 
 # Use xargs to parse quoted args
-eval "set -- $(printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" | xargs -n1 | sed 's/[^\-[:alnum:]+,./:=@_]/\\&/g' | tr '\n' ' ')"
+eval "set -- $(printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" | xargs -n1 | sed 's/[^\-a-zA-Z0-9+,./:=@_]/\\&/g' | tr '\n' ' ')"
 
 exec "$JAVACMD" "$@"

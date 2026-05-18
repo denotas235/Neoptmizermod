@@ -12,7 +12,7 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id("net.fabricmc.fabric-loom-remap") version "1.3.2"
+        id("net.fabricmc.fabric-loom-remap") version providers.gradleProperty("loom_version")
     }
 }
 rootProject.name = "NexusOptimizer"

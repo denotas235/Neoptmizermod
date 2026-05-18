@@ -12,6 +12,10 @@ repositories {
         name = "Fabric"
         url = uri("https://maven.fabricmc.net/")
     }
+    maven {
+        name = "SpongePowered"
+        url = uri("https://repo.spongepowered.org/repository/maven-public/")
+    }
     mavenCentral()
     flatDir { dirs("libs") }
 }

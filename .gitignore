@@ -1,0 +1,14 @@
+# Compilados
+build/
+*.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+
+# Termux
+*.swp
+
+# Gradle
+.gradle/

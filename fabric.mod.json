@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "nexus_optimizer",
+  "version": "1.0.0",
+  "name": "Nexus Optimizer",
+  "description": "Otimizações avançadas para Minecraft, compatível com Sodium e focado em GPUs móveis (TDBR).",
+  "authors": ["Antonio Recebeumoney"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["com.nexus.optimizer.NexusOptimizerMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.3",
+    "fabric-api": "*",
+    "minecraft": "1.21.1"
+  },
+  "suggests": {
+    "sodium": "*"
+  }
+}

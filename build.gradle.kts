@@ -4,8 +4,8 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "2.3.21"
 }
 
-version = "1.0.0"
-group = "com.nexus.optimizer"
+version = providers.gradleProperty("mod_version").get()
+group = providers.gradleProperty("maven_group").get()
 
 repositories {
     maven {
@@ -31,10 +31,10 @@ loom {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.1")
-    mappings("net.fabricmc:yarn:1.21.1+build.3:v2")
-    modImplementation("net.fabricmc:fabric-loader:0.15.3")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.96.5+1.21.1")
+    minecraft("com.mojang:minecraft:${providers.gradleProperty("minecraft_version").get()}")
+    mappings("net.fabricmc:yarn:${providers.gradleProperty("yarn_mappings").get()}:v2")
+    modImplementation("net.fabricmc:fabric-loader:${providers.gradleProperty("loader_version").get()}")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${providers.gradleProperty("fabric_api_version").get()}")
     modImplementation("me.jellysquid.mods:sodium-fabric:0.5.10+1.21.1")
     modImplementation("me.jellysquid.mods:sodium-fabric-api:0.5.10+1.21.1")
     implementation("com.google.code.gson:gson:2.10.1")

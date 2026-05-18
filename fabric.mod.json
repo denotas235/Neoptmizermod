@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nexus_optimizer",
-  "version": "1.0.0",
+  "version": "${version}",
   "name": "Nexus Optimizer",
   "description": "Otimizações avançadas para Minecraft, compatível com Sodium e focado em GPUs móveis (TDBR).",
   "authors": ["Antonio Recebeumoney"],

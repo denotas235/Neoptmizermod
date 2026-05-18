@@ -15,8 +15,6 @@
 @rem
 @rem SPDX-License-Identifier: Apache-2.0
 @rem
-
-@if "%DEBUG%"=="" @echo off
 @rem ##########################################################################
 @rem
 @rem  Gradle startup script for Windows
@@ -69,8 +67,6 @@ echo location of your Java installation. 1>&2
 
 :execute
 @rem Setup the command line
-
-
 
 @rem Execute Gradle
 @rem endlocal doesn't take effect until after the line is parsed and variables are expanded

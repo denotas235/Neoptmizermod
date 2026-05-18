@@ -34,10 +34,10 @@
 #       Busybox and similar reduced shells will NOT work, because this script
 #       requires all of these POSIX shell features:
 #         * functions;
-#         * expansions «$var», «${var}», «${var:-default}», «${var+SET}»,
-#           «${var#prefix}», «${var%suffix}», and «$( cmd )»;
-#         * compound commands having a testable exit status, especially «case»;
-#         * various built-in commands including «command», «set», and «ulimit».
+#         * expansions "${var}", "${var:-default}", "${var+SET}",
+#           "${var#prefix}", "${var%suffix}", and "$( cmd )";
+#         * compound commands having a testable exit status, especially "case";
+#         * various built-in commands including "command", "set", and "ulimit".
 #
 #   Important for patching:
 #
@@ -57,7 +57,7 @@
 #       Darwin, MinGW, and NonStop.
 #
 #   (3) This script is generated from the Groovy template
-#       https://github.com/gradle/gradle/blob/3d91ce3b8caaf77ad09f381f43615b715b53f72c/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+#       https://github.com/gradle/gradle/blob/3d91ce3b8caaf77ad09f3815b715b53f72c/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
 #       within the Gradle project.
 #
 #       You can find Gradle at https://github.com/gradle/gradle/.
@@ -102,7 +102,7 @@ die () {
     exit 1
 } >&2
 
-# OS specific support (must be 'true' or 'false').
+# OS specific support (must be 'true' ou 'false').
 cygwin=false
 msys=false
 darwin=false
@@ -238,11 +238,8 @@ fi
 # an unmatched quote.
 #
 
-eval "set -- $(
-        printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |
-        xargs -n1 |
-        sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
-        tr '\n' ' '
-    )" '"$@"'
+eval "set -- $( 
+        printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |\n        xargs -n1 |\n        sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |\n        tr '\n' ' '
+    )" '\"$@\"'
 
 exec "$JAVACMD" "$@"

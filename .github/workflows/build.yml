@@ -37,6 +37,12 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      - name: Ensure Gradle Wrapper JAR is present
+        run: |
+          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
+            ./gradlew --version > /dev/null 2>&1 || true
+          fi
+
       - name: Build with Gradle
         run: ./gradlew build --no-daemon --stacktrace --refresh-dependencies
 
